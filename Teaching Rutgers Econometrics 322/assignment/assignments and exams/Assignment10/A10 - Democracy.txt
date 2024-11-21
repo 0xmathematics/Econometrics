@@ -1,0 +1,110 @@
+### #Assignment 10 Democracy and GDP
+########################################
+
+0. (0 points) 
+From intermediate Micro economics, we learn the difference between normal good and inferior good. An item is defined as normal good if it is more demanded as people's income increase. An item is defined as inferior good if it is less demanded as people's income increase.  
+In this section, you will analyze wether the democarcy is a normal good. (i.e Do citizens demand more democracy as the GDP per capta increases) The dataset and the description of the dataset are provided below. You don't need to answer this question. This question sets up the parameter of the following questions and serves as a separator. (Round your answer in 3 decimal Places as always). 
+
+1. (2 points)
+(1) Is this a balanced panel dataset?
+True
+*False
+
+ 
+
+2. (2 points)
+(2) Run OLS to estimate the following single variate linear Model:
+dem_ind  = beta_0 + beta_1 log_gdppc + u. (we name this model: model)
+Fill in your estimation result:
+beta0 = {-1.355}
+beta1 = {0.236}
+
+3. (2 points)
+(3) Is the slope coefficient beta_1 statistical significant at 5% significant level? (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+*True
+False
+
+ 
+
+4. (5 points)
+(4) Which of the following is the correct interpretation for the slope coefficient of log_gdppc (beta_1):
+a.	GDP per capita increase by 1% would couse the dem_ind increase by beta_1*100% 
+*b.	GDP per capita increase by 1% would couse the dem_ind increase by 0.01*beta_1 unit
+c.	GDP per capita increase by 1 unit would couse the dem_ind increase by beta_1*100% 
+d.	GDP per capita increase by 1 unit would couse the dem_ind increase by 0.01*beta_1 unit
+#randomize
+
+
+5. (3 points)
+(5) The political scientist Samuel P. Huntington, in his book <<The Third Wave: Democratization in the Late Twentieth Century>>,  attributed the global trend for democratic transition to the economic development and modernization. Our analysis above support this argument or oppose it.
+
+*a.	support
+b.	oppose
+
+
+
+
+
+6. (5 points)
+(6) The model_1 is likely suffered from problems of endogeneity. There may be some omitted variables like each country's culture, history, social structures, religions. These idiosyncratic characteristic shapes the people's attitude towards political regime also determines the economic growth. Since these factors are relatively stable in time. We could use panel data analysis to eliminate such country (entity) fixed effect. Conduct the entity fixed effect panel data regression on model_1 and fill in your estimation result: (we name the new estimated model: model_2_FE)
+beta1 = {0.084}
+
+
+
+7. (2 points)
+(7) Compare the beta1 from model_1, the use of entity fixed effect panel data regression strenghthen Huntington's argument or weaken it.
+Strenghthen
+
+*Weaken
+
+8. (2 points)
+(8) From the result of entity fixed effect panel data regression model_2_FE, is the slope coefficient beta_1 statistical significant at 5% significant level? (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+*True
+
+False
+
+9. (10 points)
+(9) Looking back the history, we find the demand for democracy is contagious and sweeps across countries at certain time period. For example, the the collapse of Soviet Union of 1991, 'the Arab Spring' of 2012. Moreover, it is likely that the democracy is in retreat in 2020 due to most of the democratic country's failure of dealing with covid-19. The occurence of these historical event at different time period together with the global changes in economic conditions, would cause omitted variable bias. In order to eliminate further these time fixed effect, conduct the time fixed effect panel data regression on model_2_FE and fill in your estimation result: (we name the new estimated model: model_3_mixed_FET)
+beta1 = {0.054}
+
+
+10. (5 points)
+(10) From the result of model_3_mixed_FET, is the slope coefficient beta_1 statistical significant at 5% significant level? (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+True
+
+*False
+
+
+11. (5 points)
+(11) In order to eliminate further the omited variable bias, adding the following control variable and conduct the mixed entity and time fixed effect panel data analysis:
+dem_ind  = beta_0 + beta_1*log_gdppc + beta_2*log_pop +beta_3*age_1 +beta_4*age_2 +beta_5*age_3 +beta_6*age_4 +beta_7*age_5 +beta_8*educ +beta_9*age_median + u.
+(we name the new estimated model: model_4_control_mixed_FET):
+beta1 = {0.028}
+beta2 = {-0.077}
+beta3 = {-198147.100}
+beta4 = {-198147.733}
+beta5 = {-198150.011}
+beta6 = {-198147.157}
+beta7 = {-198146.949}
+beta8 = {0.000}
+beta9 = {0.006}
+
+
+12. (3 points)
+(12) In model_4_control_mixed_FET, which of the following coefficient is statistical significant at 10% significant level under homoskedasticity assumption. (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+a.	beta0: the coefficient of intercept
+b.	beta1: the slope coefficient of log_gdppc 
+c.	beta2: the slope coefficient of log_pop 
+d.	beta3: the slope coefficient of age_1
+e.	beta4: the slope coefficient of age_2
+f.	beta5: the slope coefficient of age_3 
+g.	beta6: the slope coefficient of age_4 
+h.	beta7: the slope coefficient of age_5 
+i.	beta8: the slope coefficient of educ 
+g.	beta9: the slope coefficient of age_median
+*k.	none of above
+
+13. (1 points)
+(13) In the paper "Income and Democracy"(2008), the author Acemoglu contend that there is no causal effect of income on democracy. Our panel data analysis above support this argument or oppose it.
+*a.	support
+b.	oppose

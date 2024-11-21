@@ -1,0 +1,97 @@
+### Assignment 10  Panel Data Analysis
+########################################
+
+
+
+0. (0 points)
+Some U.S. states have enacted laws that allow citizens to carry concealed weapons. These laws are known as "shall issue" laws because they instruct local authorities to issue a concealed weapons permit to all applicants who are citizens, are mentally competent, and have not been convicted of a felony. 
+Proponents argue that if more people carry concealed weapons, crime will decline because criminals will be deterred from attacking other people. Opponents argue that crime will increase because of accidental or spontaneous use of the weapons. 
+In this assignment you will analyze the concealed weapons laws on violent crimes. The dataset and the description of the dataset are provided below. You don't need to answer this question. This question sets up the parameter of the following questions and serves as a separator. (Round your answer in 3 decimal Places as always).
+
+1. (3 points)
+(1) Run OLS to estimate the following single variate non-linear Model:
+log(violent) = beta_0 + beta_1 law + u. (We name this equation as model_1)
+Fill in your estimation result:
+beta0 = {6.135}
+beta1 = {-0.443}
+
+2. (3 points)
+(2) In order to reduce the omitted variable bias, we add the following control variables into our model: 
+log(violent) = beta_0 + beta_1 law + beta_2 prisoners + beta_3 density+ beta_4 income+ beta_5 population + beta_6 black + beta_7 white + beta_8 male + u. (We name this equation as model_2)
+Conduct the OLS regression and fill in your estimation result:
+beta0 = {2.982}
+beta1 = {-0.368}
+beta2 = {0.002}
+beta3 = {0.027}
+beta4 = {0.000}
+beta5 = {0.043}
+beta6 = {0.081}
+beta7 = {0.031}
+beta8 = {0.009}
+
+
+3. (3 points)
+(3) In model_2, which of the following coefficient is statistical significant at 5% significant level under homoskedasticity assumption. (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+*a.	beta0: the coefficient of intercept
+*b.	beta1: the slope coefficient of law 
+*c.	beta2: the slope coefficient of prisoners 
+d.	beta3: the slope coefficient of density
+e.	beta4: the slope coefficient of income
+*f.	beta5: the slope coefficient of population 
+*g.	beta6: the slope coefficient of black 
+*h.	beta7: the slope coefficient of white 
+i.	beta8: the slope coefficient of male 
+
+4. (3 points)
+(4) In model_2, which of the following coefficient is statistical significant at 5% significant level if we use the heteroskedasticity Robust Standard error (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+*a.	beta0: the coefficient of intercept
+*b.	beta1: the slope coefficient of law 
+c.	beta2: the slope coefficient of prisoners 
+d.	beta3: the slope coefficient of density
+e.	beta4: the slope coefficient of income
+*f.	beta5: the slope coefficient of population 
+*g.	beta6: the slope coefficient of black 
+*h.	beta7: the slope coefficient of white 
+i.	beta8: the slope coefficient of male 
+
+
+5. (3 points)
+(5) Which of the following is the correct interpretation for the slope coefficient of law (beta_1):
+*a.	Allowing citizens to carry concealed weapons would prevent beta_1*100% of the violent cases
+*b.	Allowing citizens to carry concealed weapons would encourage beta_1*100% of the violent cases
+c.	Allowing 1% of the citizens to carry concealed weapons would prevent beta_1 amount of violent cases
+d.	Allowing 1% of the citizens to carry concealed weapons would encourage beta_1*100% violent cases
+
+6. (3 points)
+(6) After the inclusion of several control variables, we see that the absolute value of coefficient of beta_1 dropped. It is likely that there are still some omitted variables that have not been eliminated by control variable. For example, one possible omited variable would be the quality of state police force. The lower quality of state police force would encourage higher violent case. At the same time, these state with lower police quality would be more likely to pass the law that allow people to carry weapons to defend themselves. We could use panel data analysis to eliminate such state (entity) fixed effect. Conduct the fixed entity effect panel data regression and fill in your estimation result:
+beta0 = {2.982}
+beta1 = {-0.368}
+beta2 = {0.002}
+beta3 = {0.027}
+beta4 = {0.000}
+beta5 = {0.043}
+beta6 = {0.081}
+beta7 = {0.031}
+beta8 = {0.009}
+
+7. (3 points)
+(7) After the inclusion of several control variables, we see that the absolute value of coefficient of beta_1 dropped. It is likely that there are still some omitted variables that have not been eliminated by control variable. For example, one possible omitted variable would be the quality of state police force. The lower quality of state police force would encourage higher violent case. At the same time, these state with lower police quality would be more likely to pass the law that allow people to carry weapons to defend themselves. We could use panel data analysis to eliminate such state (entity) fixed effect. Conduct the fixed entity effect panel data regression and fill in your estimation result:
+beta1 = {-0.046}
+beta2 = {0.000}
+beta3 = {-0.172}
+beta4 = {0.000}
+beta5 = {0.012}
+beta6 = {0.104}
+beta7 = {0.041}
+beta8 = {-0.050}
+
+8. (3 points)
+(8) After the inclusion of several control variables, we see that the absolute value of coefficient of beta_1 dropped. It is likely that there are still some omitted variables that have not been eliminated by control variable. For example, one possible omitted variable would be the quality of state police force. The lower quality of state police force would encourage higher violent case. At the same time, these state with lower police quality would be more likely to pass the law that allow people to carry weapons to defend themselves. We could use panel data analysis to eliminate such state (entity) fixed effect. Conduct the fixed entity effect panel data regression and fill in your estimation result:
+beta1 = {-0.046}
+beta2 = {0.000}
+beta3 = {-0.172}
+beta4 = {0.000}
+beta5 = {0.012}
+beta6 = {0.104}
+beta7 = {0.041}
+beta8 = {-0.050}

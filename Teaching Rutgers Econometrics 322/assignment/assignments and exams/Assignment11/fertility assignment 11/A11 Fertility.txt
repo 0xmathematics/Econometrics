@@ -1,0 +1,86 @@
+### Assignment 11  Instrumental Variable Fertility affect labor supply?
+####################################################################################
+
+0. (0 points) From intermediate macroeconomics, we know that labor is one of the key factors of the Cobb-Douglass production function. It is critically important to study how people make their decision of providing labor. In this section, we will study the effect of fertility on a mother's labor supply. The dataset and the description of the dataset are provided below. You don't need to answer this question. This question sets up the parameter of the following questions and serves as a separator. (Round your answer in 3 decimal Places as always).
+
+1. (3 points)
+(1) Run OLS to estimate the following single variate linear Model:
+work = beta_0 + beta_1 morekids + u. (We name this equation as model_1)
+Fill in your estimation result:
+beta0 = {21.068}
+beta1 = {-5.387}
+
+2. (3 points)
+(2) Using heteroskedasticity robust standard error and critical value of t-distribution to construct the 95% Confidence interval: 95%CI = (____ , ____)
+{-5.558}
+{-5.216}
+
+
+3. (3 points)
+(3) As you may find from the above estimation and statistical inference result, they are consistent with our expectation that given birth to an additional child would negatively impact the mother's labor supply. But is our model free from internal invalidity? One concern is there are some latent factors that would affect the mother's labor supply, and the mother's labor supply, in turn, affect the mother's decision to give birth to another child. For example, a woman who works more than average may also be a woman who is less likely to have an additional child. If the above critique is true, then model_1 is suffering which of the following internal invalidity：
+*a.	Omitted Variable Bias
+b.	Wrong Functional Form
+c.	Errors-in-Variables Bias
+d.	Sample Selection Bias
+*e.	Simultaneous Causality Bias
+*f.	Endogeneity
+
+4. (3 points)
+(4) In order to solve the internal invalidity, we use the samesex as our instrumental variable. Intuitively samesex would be relevant to the regressor morekids, since a mother who had two children of same sex would tentatively want more kids. The exogeneity is due to the fact that samesex of the first two children is purely genetically random phenomenon independent with any uncertainty u.  With this intuitive justification, we could conduct instrumental variable regression. (We name these TSLS equations as model_2). Fill in your IV estimation below:
+beta0 = {21.421}
+beta1 = {-6.314}
+
+5. (3 points)
+(5) Comparing model_1 and model_2, we see the difference of the beta1 (the causal effect of fertility on labor supply). To prove that model_2 is superior to model_1, we need to show that samesex is a valid instrument. Which of the following is the correct Hypothesis, statistics and criterion for testing the relevance of the instrument
+*a.	H0: all the slope coefficient of the instrumental variable at the first stage == 0;
+b.	H0: all the slope coefficient of the instrumental variable at the second stage == 0;
+c.	H0: all the slope coefficient at the first stage  (including that of the control variable) == 0; 
+d.	H0: all the slope coefficient at the second stage  (including that of the control variable) == 0; 
+e.	t statistics
+f.	Wald statistics
+*g.	F statistics
+h.	J statistics
+i.	statistics is insignificant at 10%
+j.	statistics is insignificant at 5%
+k.	statistics is insignificant at 1%
+*l.	statistics is greater than 10
+
+
+
+6. (5 points)
+(6) What is the numerical value for the correct statistics in (5): (Rounding to the nearest integer) 
+{1237}
+
+7. (5 points)
+(7) Is samesex a weak instrument?
+True
+*False
+
+
+
+8. (5 points)
+(8) Which of the following is the correct Hypothesis, statistics, and criterion for testing the exogeneity of the instrument when the coefficient is overidentified
+*a.	H0: at least one of the instrumental variable is orthogonal to the uncertainty;
+b.	H0: at least one of the instrumental variable is not orthogonal to the uncertainty;
+c.	H0: all the instrumental variable is orthogonal to the uncertainty;
+d.	H0: all the instrumental variable is not orthogonal to the uncertainty;
+e.	t statistics
+f.	Wald statistics
+g.	F statistics
+*h.	J statistics
+i.	statistics is significant at 10%
+j.	statistics is significant at 5%
+k.	statistics is significant at 1%
+l.	statistics is greater than 10
+
+
+
+9. (5 points)
+(9) Add the following control variables and run the generalized instrumental variable regression with samesex as the instrumental variable:
+work = beta_0 + beta_1*morekids + beta_2*age +beta_3*black +beta_4*hispanic +beta_5*other + u (we name the new estimated model: model_3).
+Fill in your estimation result:
+beta1 = {-5.821}
+beta2 = {0.832}
+beta3 = {11.623}
+beta4 = {0.404}
+beta5 = {2.131}

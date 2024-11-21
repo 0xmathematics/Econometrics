@@ -1,0 +1,139 @@
+### Assignment 11  Instrumental Variable Violent Movie lead to Violent behavior?
+####################################################################################
+
+
+
+0. (0 points) In this question, we want to investigate the relationship between violent behavior and violent movie. More precisely, does watching violent movie lead to violent behavior? If so, the number of assaults would increase after the release of a violent movie that attract a lot of viewers.
+
+On the one hand, evidence from laboratory experiments in psychology indicate that media violence increases aggression in the short run, thus support the above argument. On the other, violent movie would attract violent individuals into theatre, leading to a substitution away from more direct violent activities or indirect leading activities such as alcohol consumption, thus oppose the above statement. 
+
+The dataset contains the number of assaults (as dependent variable Y), three different type of movie attendance (as endogenous varialbes X's), binary variables such as year, month, holiday, weathers (as control variables W's) and predicted&adjacent attendance (as instrument variables Z's). Each sample is observed at the weekend, there are 516 weekends in total ranging from 1995 through 2004. A detailed description is in "movies_description.pdf". 
+
+You don't need to answer this question. This question sets up the parameter of the following questions and serves as a separator. (Round your answer in 3 decimal Places as always).
+
+1. (3 points)
+(1) Run OLS to estimate the following single variate linear Model:
+log(assaults) = beta_0 + beta_1 attend_v + u. (We name this equation as model_1)
+Fill in your estimation result:
+beta0 = {8.233}
+beta1 = {-0.007}
+
+2. (3 points)
+(2) Using heteroskedasticity robust standard error and critical value of t-distribution to construct the 90% Confidence interval for beta1 of model_1: 90%CI = (____ , ____)
+{-0.025}
+{0.012}
+
+3. (5 points)
+(3) The beta1 from model_1 is not statistical significant from either the above CI or t_stat. One possible reason is there are confounding variables or omitted variables both correlated with x (attend_v) and y(assault). Possible examples of confounding variables are time trend and seasonal effect. Run OLS to estimate the seasonal effect of assault by regressing log(assault) on year2 - year10, and month2 - month12 (We name this equation as Model_2). Which of the following statement(s) is/are correct:
+*a.	Include both year1 and month1 will lead to multicollinearity
+*b.	Include either year1 or month1 will lead to multicollinearity
+c.	Include both year1 and month1 will lead to a biased estimator
+d.	Include both year1 and month1 will lead to an inconsistent estimator
+e.	Include either year1 or month1 will lead to a biased estimator
+f.	Include either year1 or month1 will lead to an inconsistent estimator
+g.	beta0 is the impact of year1 on assault only
+h.	beta0 is the impact of month1 on assault only
+i.	beta0 is the impact of year1 and month1 on assault only
+*j.	The number of assault is trending upward in general
+k.	The number of assault is trending downward in general
+l.	Most of the assaults occurred in Spring 
+*m.	Most of the assaults occurred in Summer 
+l.	Most of the assaults occurred in Fall
+l.	Most of the assaults occurred in Winter
+
+4. (10 points)
+(4) Testing the seasonal effect for assault is equivalent to joint testing the H_0: beta_month2 = 0, beta_month3 = 0, ..., beta_month12 = 0 in model_2. What is the numerical value for the F statistics for such null:
+F_stat = {76.259}
+
+
+
+5. (3 points)
+(5) A dump month is the period of the year where the commercial and critical expectations for films are exceedingly low. Audiences tend to be at their busiest during these periods, keeping them away from the theaters. As a result, studios will spend this time “dumping” the movies that have been deemed lesser. Run OLS to estimate the seasonal effect of movie attendance (attend = attend_v + attend_m + attend_n) by regressing attend on year2 - year10, and month2 - month12 (We name this equation as Model_3). Which month is most likely to be the dump month from our estimation result of Model_3
+a.	month1
+b.	month2
+c.	month3
+d.	month4
+e.	month5
+f.	month6
+g.	month7
+h.	month8
+*i.	month9
+j.	month10
+k.	month11
+l.	month12
+
+6. (5 points)
+(6) Testing the seasonal effect for attend is equivalent to joint testing the H_0: beta_month2 = 0, beta_month3 = 0, ..., beta_month12 = 0 in model_3. What is the numerical value for the F statistics for such null:
+F_stat = {33.724}
+
+
+7. (5 points)
+(7) From the analysis of (4) and (6), we could conclude both assault and attendance is correlated with seasonal effect month binary variable. In order to eliminate this OVB, we want to include all these binary variables plus weather and holidays as control variables. Run OLS by regressing log(assault) on attend_v, attend_m, attend_n, year2 - year10, month2 - month12, holidays (with prefix h_), weather (with prefix w_) (We name this equation as Model_4). Fill in the estimation of beta coefficients of interest:
+beta_attend_v = {-0.003}
+beta_attend_m = {-0.003}
+beta_attend_n = {-0.002}
+
+8. (3 points)
+(8) In model_4, which of the following beta coefficient is statistical significant at 1% significant level if we use the heteroskedasticity Robust Standard error (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+*a.	attend_v
+*b.	attend_m
+*c.	attend_n
+*d.	h_chris
+e.	h_newyr
+*f.	h_easter
+g.	h_july4
+h.	h_mem
+i.	h_labor
+*j.	w_maxa
+*k.	w_rain
+l.	w_snow
+
+
+
+9. (5 points)
+(9) In the paper "The Influence of Media Violence on Youth"(2003) and "Effects of Violent Video Games on Aggressive
+Behavior, Aggressive Cognition, Aggressive Affect, Physiological Arousal, and Prosocial Behavior: A Meta-analytic Review of the Scientific Literature"(2003), The authors find a sharp increase in aggressive behavior immediately after the media exposure, compared to a control group exposed to non-violent clips. Our analysis from Model_4 support this experiment result or not?
+a.	support
+*b.	oppose
+
+
+10. (10 points)
+(10) Run the generalized instrumental variable regression by regressing log(assault) on attend_v, attend_m, attend_n, year2 - year10, month2 - month12, holidays (with prefix h_), weather (with prefix w_), with attend_v_f, attend_m_f, attend_n_f, attend_v_b, attend_m_b, attend_n_b as the instrumental variables; attend_v, attend_m, attend_n as endogenous variables; year2 - year10, month2 - month12, holidays (with prefix h_), weather (with prefix w_) as control variables (We name it as Model_5)
+Fill in your estimation of the following beta coefficient:
+beta_attend_v = {-0.003}
+beta_attend_m = {-0.004}
+beta_attend_n = {-0.003}
+
+
+
+11. (3 points)
+(11) In model_5, which of the following beta coefficient is statistical significant at 10% significant level if we use the homoskedasticity Standard error (The default null hypothesis is H_0: beta_k ==0 vs H_1:beta_k != 0)
+a.	attend_v
+*b.	attend_m
+*c.	attend_n
+*d.	h_chris
+*e.	h_newyr
+*f.	h_easter
+*g.	h_july4
+h.	h_mem
+*i.	h_labor
+*j.	w_maxa
+*k.	w_rain
+*l.	w_snow
+
+
+12. (3 points)
+(12) As we stated at the beginning, violent movie may attract violent individuals into theatre, leading to a substitution away from more direct violent activities. Our analysis from model_5 support this experiment result or not?
+a.	support
+*b.	oppose
+
+
+###########
+# back up
+#########
+10. (10 points)
+(10) Run the generalized instrumental variable regression by regressing log(assault) on attend_v, attend_m, attend_n, year2 - year10, month2 - month12, holidays (with prefix h_), weather (with prefix w_) with "pr_attend_v", "pr_attend_m", "pr_attend_n" as the instrumental variables; attend_v, attend_m, attend_n as endogenous variables; year2 - year10, month2 - month12, holidays (with prefix h_), weather (with prefix w_) as control variables (We name it as Model_5)
+Fill in your estimation of the following beta coefficient:
+beta_attend_v = {-0.004}
+beta_attend_m = {-0.004}
+beta_attend_n = {-0.003}
